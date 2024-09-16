@@ -220,30 +220,30 @@ namespace BooksUnitTestEx1
         #endregion
 
         #region Methods
-        //[Fact]
-        //public void Return_Expected_CSV_String()
-        //{
-        //    //Arrange
-        //    Author author = new Author("Lowan", "Behold", "lowanbehold.fantasy.ca", "Edmonton", "Canada");
-        //    string expectedCSV = "Lowan,Behold,lowanbehold.fantasy.ca,Edmonton,Canada";
-        //    //Act
-        //    string actual = author.ToString();
+        [Fact]
+        public void Return_Expected_CSV_String()
+        {
+            //Arrange
+            Author author = new Author("Lowan", "Behold", "lowanbehold.fantasy.ca", "Edmonton", "Canada");
+            string expectedCSV = "Lowan,Behold,lowanbehold.fantasy.ca,Edmonton,Canada";
+            //Act
+            string actual = author.ToString();
 
-        //    //Assert
-        //    actual.Should().Be(expectedCSV);
-        //}
-        //[Fact]
-        //public void Return_Expected_Author_FullName()
-        //{
-        //    //Arrange
-        //    Author author = new Author("Lowan", "Behold", "lowanbehold.fantasy.ca", "Edmonton", "Canada");
-        //    string expectedfullname = "Behold, Lowan";
-        //    //Act
-        //    string actual = author.AuthorName;
+            //Assert
+            actual.Should().Be(expectedCSV);
+        }
+        [Fact]
+        public void Return_Expected_Author_FullName()
+        {
+            //Arrange
+            Author author = new Author("Lowan", "Behold", "lowanbehold.fantasy.ca", "Edmonton", "Canada");
+            string expectedfullname = "Behold, Lowan";
+            //Act
+            string actual = author.AuthorName;
 
-        //    //Assert
-        //    actual.Should().Be(expectedfullname);
-        //}
+            //Assert
+            actual.Should().Be(expectedfullname);
+        }
         #endregion
     }
 }

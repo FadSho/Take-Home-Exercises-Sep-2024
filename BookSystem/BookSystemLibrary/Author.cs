@@ -90,7 +90,7 @@ namespace BookSystemLibraryEx1
         // Read-Only properties not to store data.
         public string AuthorName
         {
-            get => $"{FirstName} {LastName}";
+            get => $"{LastName}, {FirstName}";
         }
         #endregion
 
@@ -105,11 +105,11 @@ namespace BookSystemLibraryEx1
         }
         #endregion
 
-        // Return a comma-separated value string
+        // Return a comma-separated value string with no spaces
         #region Methods
         public override string ToString()
         {
-            return $"{FirstName}, {LastName}, {ContactUrl}, {ResidentCity}, {ResidentCountry}";
+            return $"{FirstName},{LastName},{ContactUrl},{ResidentCity},{ResidentCountry}";
         }
         #endregion
     }
