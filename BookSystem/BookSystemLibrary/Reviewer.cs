@@ -72,7 +72,6 @@ namespace BookSystemLibraryEx1
         #endregion
 
         #region Constructor
-
         public Reviewer(string firstName, string lastName, string email, string organization = null)
         {
             FirstName = firstName;
