@@ -1,14 +1,16 @@
-﻿namespace BookSystemLibrary
+﻿using System.Text.RegularExpressions;
+
+namespace BookSystemLibraryEx1
 {
     public class Author
     {
         #region Data Members
 
-        private string _FirstName;
-        private string _LastName;
-        private string _ContactUrl;
-        private string _ResidentCity;
-        private string _ResidentCountry;
+        private string _FirstName = string.Empty;
+        private string _LastName = string.Empty;
+        private string _ContactUrl = string.Empty;
+        private string _ResidentCity = string.Empty;
+        private string _ResidentCountry = string.Empty;
         #endregion
 
         #region Properties
@@ -19,7 +21,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("FirstName must be provided.");
+                    throw new ArgumentException("FirstName is required.");
                 }
                 _FirstName = value.Trim();
             }
@@ -32,7 +34,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("LastName must be provided.");
+                    throw new ArgumentException("LastName is required.");
                 }
                 _LastName = value.Trim();
             }
@@ -45,8 +47,15 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("ContactUrl should be the web site of the author.");
+                    throw new ArgumentException("ContactUrl is required.");
                 }
+
+                string pattern = @"^(https?://www\.)?[a-zA-Z0-9]+\.\w{2,}(?!\.)";
+                if (!Regex.IsMatch(value.Trim(), pattern))
+                {
+                    throw new ArgumentException("ContactUrl does not match the acceptable URL pattern.");
+                }
+
                 _ContactUrl = value.Trim();
             }
         }
@@ -58,7 +67,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("ResidentCity should be current city author is residing.");
+                    throw new ArgumentException("ResidentCity is required.");
                 }
                 _ResidentCity = value.Trim();
             }
@@ -71,7 +80,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("ResidentCountry should be current country author is residing.");
+                    throw new ArgumentException("ResidentCountry is required.");
                 }
                 _ResidentCountry = value.Trim();
             }
@@ -97,9 +106,11 @@
         #endregion
 
         // Return a comma-separated value string
+        #region Methods
         public override string ToString()
         {
             return $"{FirstName}, {LastName}, {ContactUrl}, {ResidentCity}, {ResidentCountry}";
         }
+        #endregion
     }
 }

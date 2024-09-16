@@ -9,12 +9,11 @@ namespace BookSystemLibraryEx1
 {
     public class Reviewer
     {
-        #region
-        private string _FirstName;
-        private string _LastName;
-        private string _Email;
-        private string _Organization;
-
+        #region Data Members
+        private string _FirstName = string.Empty;
+        private string _LastName = string.Empty;
+        private string _Email = string.Empty;
+        private string? _Organization = string.Empty;
         #endregion
 
         #region Properties
@@ -49,22 +48,21 @@ namespace BookSystemLibraryEx1
             get => _Email;
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || !IsValidEmail(value))
-                {
+                string pattern = @"^[\w.-]+@[\w.-]+\.\w{2,}$";
+                if (string.IsNullOrWhiteSpace(value) || !Regex.IsMatch(value.Trim(), pattern))
                     throw new ArgumentException("Email must be a valid email address.");
-                }
                 _Email = value.Trim();
             }
         }
 
-        public string Organization
+        public string? Organization
         {
             get => _Organization;
-            set => _Organization = value?.Trim();  // Optional, null allowed
+            set => _Organization = value?.Trim() ?? null;
         }
 
-        // Read-Only property that builds from FirstName and LastName
-        public string FullName
+        // Property that combines FirstName and LastName
+        public string ReviewerName
         {
             get => $"{FirstName} {LastName}";
         }
@@ -72,28 +70,19 @@ namespace BookSystemLibraryEx1
         #endregion
 
         #region Constructor
-        public Reviewer(string firstName, string lastName, string email, string organization = null)
+        public Reviewer(string firstName, string lastName, string email, string? organization = null)
         {
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Organization = organization;
         }
-
         #endregion
 
         #region Methods
-
         public override string ToString()
         {
             return $"{FirstName}, {LastName}, {Email}, {Organization ?? "Independent"}";
-        }
-
-        private bool IsValidEmail(string email)
-        {
-            string pattern = @"^[\w.-]+@[\w.-]+\.\w{2,}$";
-            Regex regex = new Regex(pattern);
-            return regex.IsMatch(email);
         }
 
         #endregion
