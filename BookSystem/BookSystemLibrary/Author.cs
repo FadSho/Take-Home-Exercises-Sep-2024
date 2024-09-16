@@ -71,7 +71,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("ResidentCountry should be current city author is residing.");
+                    throw new ArgumentException("ResidentCountry should be current country author is residing.");
                 }
                 _ResidentCountry = value.Trim();
             }

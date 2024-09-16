@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BookSystem\BookSystemLibrary\BookSystemLibrary.csproj" />
+    <ProjectReference Include="..\..\BookSystem\BookSystemLibrary\BookSystemLibraryEx1.csproj" />
   </ItemGroup>
 
   <ItemGroup>

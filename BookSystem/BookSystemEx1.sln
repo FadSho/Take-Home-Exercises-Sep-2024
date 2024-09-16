@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookSystemLibrary", "BookSystemLibrary\BookSystemLibrary.csproj", "{B090E5FA-91B5-4E1A-AD10-A4FE9242B414}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookSystemLibraryEx1", "BookSystemLibrary\BookSystemLibraryEx1.csproj", "{B090E5FA-91B5-4E1A-AD10-A4FE9242B414}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksUnitTestEx1", "..\BooksUnitTestEx1\BooksUnitTestEx1\BooksUnitTestEx1.csproj", "{301EDAAD-B1A7-45C8-BC6B-345A7B775860}"
 EndProject
