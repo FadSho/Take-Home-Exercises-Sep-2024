@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace BookSystemLibraryEx1
+namespace BookSystem
 {
     public class Reviewer
     {

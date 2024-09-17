@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace BookSystemLibraryEx1
+namespace BookSystem
 {
     public class Author
     {

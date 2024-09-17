@@ -1,6 +1,6 @@
 //using BookSystem;
 using FluentAssertions;
-using BookSystemLibraryEx1;
+using BookSystem;
 using System.Diagnostics.Metrics;
 
 namespace BooksUnitTestEx1
@@ -19,7 +19,7 @@ namespace BooksUnitTestEx1
             string expectedcountry = "Canada";
 
             //When - Act
-            Author actual = new BookSystemLibraryEx1.Author("Lowan", "Behold", "lowanbehold.fantasy.ca", "Edmonton", "Canada");
+            Author actual = new BookSystem.Author("Lowan", "Behold", "lowanbehold.fantasy.ca", "Edmonton", "Canada");
 
             //Then - Assert
             actual.FirstName.Should().Be(expectedfirstname);

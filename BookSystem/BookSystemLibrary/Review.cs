@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookSystemLibraryEx1
+namespace BookSystem
 {
     public class Review
     {
